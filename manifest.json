@@ -9,10 +9,10 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icons/icon.png"
+    "default_icon": "icons/icon.jpg"
   },
   "icons": {
-    "128": "icons/icon.png"
+    "128": "icons/icon.jpg"
   },
   "content_scripts": [
     {
