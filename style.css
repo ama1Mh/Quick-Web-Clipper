@@ -1,27 +1,43 @@
 body {
   font-family: sans-serif;
-  width: 250px;
   padding: 10px;
+  margin: 0;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
 }
 
 textarea {
-  width: 100%;
+  width: 95%;
+  margin-left: 5px;
   height: 80px;
   margin-bottom: 10px;
+  resize: vertical;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 8px;
 }
 
 input, select {
   width: 100%;
   margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 button {
-  width: 100%;
-  padding: 5px;
+  padding: 6px 12px;
   background-color: #007bff;
   color: white;
   border: none;
-  margin-top: 5px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 #status {
@@ -30,10 +46,72 @@ button {
   color: green;
 }
 
-#notes p.note-content {
-  min-height: 50px;
+#notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.note-card {
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
   background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 5px;
+  word-wrap: break-word;
+}
+
+.note-card strong {
+  display: block;
+  font-size: 1rem;
   margin-bottom: 5px;
 }
+
+.note-card a {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  color: #0645ad;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.note-card a:hover {
+  text-decoration: underline;
+}
+
+.note-content {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 8px;
+  margin-bottom: 5px;
+  min-height: 50px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+}
+
+.note-card small {
+  font-size: 0.75rem;
+  color: #333;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+#search, #filter-tag {
+  font-size: 0.9rem;
+  width: 150px;
+}
+
+/* Custom tag background colors */
+.note-card[data-tag="idea"]     { background-color: #fff9c4; }
+.note-card[data-tag="todo"]     { background-color: #b3e5fc; }
+.note-card[data-tag="read later"] { background-color: #dcedc8; }
+.note-card[data-tag="important"] { background-color: #ffcdd2; }
+.note-card[data-tag="work"]     { background-color: #e1bee7; }
+.note-card[data-tag="personal"] { background-color: #ffe0b2; }

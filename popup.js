@@ -23,7 +23,7 @@ document.getElementById("save").addEventListener("click", async () => {
       created_at: new Date().toISOString()
     });
     chrome.storage.local.set({ savedNotes }, () => {
-      document.getElementById("status").textContent = "✅ Saved!";
+      document.getElementById("status").textContent = " Saved!";
       setTimeout(() => document.getElementById("status").textContent = "", 2000);
       document.getElementById("note").value = "";
       tagDropdown.value = "";

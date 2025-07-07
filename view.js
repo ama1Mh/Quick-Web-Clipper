@@ -3,6 +3,15 @@ const tagFilter = document.getElementById("filter-tag");
 const searchInput = document.getElementById("search");
 let allNotes = [];
 
+const tagColors = {
+  "idea": "#fff9c4",
+  "todo": "#b3e5fc",
+  "read later": "#dcedc8",
+  "important": "#ffcdd2",
+  "work": "#e1bee7",
+  "personal": "#ffe0b2"
+};
+
 function populateFilterDropdown() {
   predefinedTags.forEach(tag => {
     const option = document.createElement("option");
@@ -27,20 +36,17 @@ function renderNotes(notes) {
 
   notes.forEach((note, index) => {
     const card = document.createElement("div");
-    card.style.border = "1px solid #ccc";
-    card.style.padding = "10px";
-    card.style.marginBottom = "10px";
-    card.style.borderRadius = "8px";
-    card.style.backgroundColor = "#f9f9f9";
+    card.className = "note-card";
+    card.style.backgroundColor = tagColors[note.tags[0]] || "#f9f9f9";
 
-    const title = `<strong>${note.title}</strong> <br/> <a href="${note.url}" target="_blank">${note.url}</a>`;
+    const shortenedUrl = note.url.length > 50 ? note.url.slice(0, 50) + "..." : note.url;
+    const title = `<strong>${note.title}</strong> <br/> <a href="${note.url}" title="${note.url}" target="_blank">${shortenedUrl}</a>`;
     const content = `<p contenteditable="true" class="note-content">${note.text}</p>`;
     const tags = note.tags.length ? `<small>Tags: ${note.tags.join(", ")}</small>` : "";
     const date = `<small> ${new Date(note.created_at).toLocaleString()}</small>`;
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = " Delete";
-    deleteBtn.style.marginTop = "5px";
     deleteBtn.onclick = () => {
       allNotes.splice(index, 1);
       saveNotes(allNotes);
@@ -49,8 +55,6 @@ function renderNotes(notes) {
 
     const saveEditBtn = document.createElement("button");
     saveEditBtn.textContent = " Save Edit";
-    saveEditBtn.style.marginTop = "5px";
-    saveEditBtn.style.marginLeft = "10px";
     saveEditBtn.onclick = () => {
       const newText = card.querySelector(".note-content").textContent;
       allNotes[index].text = newText;
