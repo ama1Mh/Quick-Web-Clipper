@@ -1,54 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
-  font-family: sans-serif;
- 
-  margin: 0;
-  background-color: #f4f4f4;
-  min-height: 100vh; 
-  background-image:  url("/icons/background.jpg");
+  font-family: 'Press Start 2P', monospace;
+  margin: 10px;
+  background-color: #1c1c1c;
+  color: #f0f0f0;
+  min-height: 100vh;
+  padding: 10px;
+  overflow-x: hidden;
+  font-size: 12px;
+}
+.viwe {
+  background-image: url("/icons/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow-x: hidden;
 }
-
-textarea {
+label {
+  margin: 5px;
+  padding: 12px;
+}
+textarea,
+input,
+select {
+  font-family: inherit;
+  background-color: #2b2b2b;
+  color: #f0f0f0;
+  border: 1px solid #555;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 10px;
   width: 95%;
-  margin-left: 5px;
-  height: 80px;
-  margin-bottom: 10px;
-  resize: vertical;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 8px;
-}
-
-input, select {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
 }
 
 button {
+  font-family: inherit;
   padding: 6px 12px;
-  background-color: #007bff;
-  color: white;
+  background-color: #9b1dea;
+  color: #fff;
   border: none;
   margin: 5px;
   cursor: pointer;
   border-radius: 4px;
-  font-size: 0.9em;
+  font-size: 10px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #9b1dea5a;
 }
 
 #status {
   margin-top: 10px;
-  font-size: 0.9em;
-  color: green;
+  font-size: 10px;
+  color: #90ee90;
 }
 
 #notes {
@@ -59,27 +63,26 @@ button:hover {
 }
 
 .note-card {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
   padding: 12px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
   transition: background-color 0.3s ease;
-  background-color: #fff;
-  word-wrap: break-word;
 }
 
 .note-card strong {
   display: block;
-  font-size: 1rem;
+  font-size: 10px;
   margin-bottom: 5px;
+  color: #9b1dea;
 }
 
 .note-card a {
-  display: inline-block;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  color: #0645ad;
+  color: #385a72;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 10px;
+  word-wrap: break-word;
 }
 
 .note-card a:hover {
@@ -87,36 +90,43 @@ button:hover {
 }
 
 .note-content {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #1f1f1f;
+  border: 1px solid #444;
   padding: 8px;
   margin-bottom: 5px;
   min-height: 50px;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 10px;
   white-space: pre-wrap;
+  color: #f0f0f0;
 }
 
 .note-card small {
-  font-size: 0.75rem;
-  color: #333;
+  font-size: 8px;
+  color: #444444;
 }
 
 h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
-  color: #333;
+  margin-top: 10px;
+  font-size: 30px;
+  color: #ffffff;
 }
 
-#search, #filter-tag {
-  font-size: 0.9rem;
-  width: 150px;
+#search,
+#filter-tag {
+  font-size: 10px;
+  background-color: #2b2b2b;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 4px;
+  width: 160px;
 }
 
-/* Custom tag background colors */
-.note-card[data-tag="idea"]     { background-color: #fff9c4; }
-.note-card[data-tag="todo"]     { background-color: #b3e5fc; }
-.note-card[data-tag="read later"] { background-color: #dcedc8; }
-.note-card[data-tag="important"] { background-color: #ffcdd2; }
-.note-card[data-tag="work"]     { background-color: #e1bee7; }
-.note-card[data-tag="personal"] { background-color: #ffe0b2; }
+/* Dark custom tag colors */
+.note-card[data-tag="idea"]     { background-color: #5d4037; }
+.note-card[data-tag="todo"]     { background-color: #1976d2; }
+.note-card[data-tag="read later"] { background-color: #388e3c; }
+.note-card[data-tag="important"] { background-color: #c62828; }
+.note-card[data-tag="work"]     { background-color: #6a1b9a; }
+.note-card[data-tag="personal"] { background-color: #f57c00; }

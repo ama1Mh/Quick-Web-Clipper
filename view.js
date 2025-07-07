@@ -40,7 +40,7 @@ function renderNotes(notes) {
     card.style.backgroundColor = tagColors[note.tags[0]] || "#f9f9f9";
 
     const shortenedUrl = note.url.length > 50 ? note.url.slice(0, 50) + "..." : note.url;
-    const title = `<strong>${note.title}</strong> <br/> <a href="${note.url}" title="${note.url}" target="_blank">${shortenedUrl}</a>`;
+    const title = `<strong>${note.title}</strong> <br/> <a href="${note.url}" title="${note.url}" target="_blank"></a>`;
     const content = `<p contenteditable="true" class="note-content">${note.text}</p>`;
     const tags = note.tags.length ? `<small>Tags: ${note.tags.join(", ")}</small>` : "";
     const date = `<small> ${new Date(note.created_at).toLocaleString()}</small>`;
