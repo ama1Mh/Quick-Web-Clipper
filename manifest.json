@@ -19,5 +19,13 @@
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "web_accessible_resources": [
+  {
+    "resources": ["icons/background.jpg"],
+    "matches": ["<all_urls>"]
+  }
+]
+
+  
 }

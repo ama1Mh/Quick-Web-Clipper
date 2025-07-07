@@ -1,8 +1,13 @@
 body {
   font-family: sans-serif;
-  padding: 10px;
+ 
   margin: 0;
   background-color: #f4f4f4;
+  min-height: 100vh; 
+  background-image:  url("/icons/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow-x: hidden;
 }
 
