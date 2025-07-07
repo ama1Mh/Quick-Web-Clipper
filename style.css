@@ -2,31 +2,35 @@
 
 body {
   font-family: 'Press Start 2P', monospace;
-  margin: 10px;
-  background-color: #1c1c1c;
-  color: #f0f0f0;
+  background-color: #050917; 
+  color: #FEE0A0;            
   min-height: 100vh;
   padding: 10px;
   overflow-x: hidden;
-  font-size: 12px;
+  
 }
+
 .viwe {
   background-image: url("/icons/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+   background-attachment: fixed;
 }
+
 label {
   margin: 5px;
   padding: 12px;
+  color: #FEE0A0;
 }
+
 textarea,
 input,
 select {
   font-family: inherit;
-  background-color: #2b2b2b;
-  color: #f0f0f0;
-  border: 1px solid #555;
+  background-color: #271B43;   
+  color: #FEE0A0;              
+  border: 1px solid #913F59;  
   border-radius: 5px;
   padding: 8px;
   margin-bottom: 10px;
@@ -36,23 +40,25 @@ select {
 button {
   font-family: inherit;
   padding: 6px 12px;
-  background-color: #9b1dea;
-  color: #fff;
+  background-color: #DB5AAA;  
+  color: #050917;            
   border: none;
   margin: 5px;
   cursor: pointer;
   border-radius: 4px;
   font-size: 10px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 button:hover {
-  background-color: #9b1dea5a;
+  background-color: #913F59;  
+  color: #FEE0A0;
 }
 
 #status {
   margin-top: 10px;
   font-size: 10px;
-  color: #90ee90;
+  color: #388e3c; 
 }
 
 #notes {
@@ -63,11 +69,12 @@ button:hover {
 }
 
 .note-card {
-  background-color: #2a2a2a;
-  color: #f0f0f0;
+  background-color: #271B43;   
+  color: #FEE0A0;              
   padding: 12px;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.08);
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
   transition: background-color 0.3s ease;
 }
 
@@ -75,11 +82,11 @@ button:hover {
   display: block;
   font-size: 10px;
   margin-bottom: 5px;
-  color: #9b1dea;
+  color: #DB5AAA; 
 }
 
 .note-card a {
-  color: #385a72;
+  color: #FEE0A0;
   text-decoration: none;
   font-size: 10px;
   word-wrap: break-word;
@@ -87,46 +94,49 @@ button:hover {
 
 .note-card a:hover {
   text-decoration: underline;
+  color: #DB5AAA;
 }
 
 .note-content {
-  background-color: #1f1f1f;
-  border: 1px solid #444;
+  background-color: #050917; 
+  border: 1px solid #913F59;
   padding: 8px;
   margin-bottom: 5px;
   min-height: 50px;
   border-radius: 4px;
   font-size: 10px;
   white-space: pre-wrap;
-  color: #f0f0f0;
+  color: #FEE0A0;
 }
 
 .note-card small {
   font-size: 8px;
-  color: #444444;
+  color: #f5cb72;
 }
 
 h3 {
   margin-top: 10px;
   font-size: 30px;
-  color: #ffffff;
+  color: #FEE0A0;
 }
 
 #search,
 #filter-tag {
   font-size: 10px;
-  background-color: #2b2b2b;
-  color: #fff;
-  border: 1px solid #444;
+  background-color: #271B43;
+  color: #FEE0A0;
+  border: 1px solid #913F59;
   border-radius: 4px;
   padding: 4px;
   width: 160px;
 }
 
-/* Dark custom tag colors */
-.note-card[data-tag="idea"]     { background-color: #5d4037; }
-.note-card[data-tag="todo"]     { background-color: #1976d2; }
-.note-card[data-tag="read later"] { background-color: #388e3c; }
-.note-card[data-tag="important"] { background-color: #c62828; }
-.note-card[data-tag="work"]     { background-color: #6a1b9a; }
-.note-card[data-tag="personal"] { background-color: #f57c00; }
+.tag {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 4px;
+  color: #FEE0A0; 
+}

@@ -2,14 +2,13 @@ const predefinedTags = ["idea", "todo", "read later", "important", "work", "pers
 const tagFilter = document.getElementById("filter-tag");
 const searchInput = document.getElementById("search");
 let allNotes = [];
-
 const tagColors = {
-  "idea": "#fff9c4",
-  "todo": "#b3e5fc",
-  "read later": "#dcedc8",
-  "important": "#ffcdd2",
-  "work": "#e1bee7",
-  "personal": "#ffe0b2"
+  "idea": "#6C3A4B",         // soft magenta (close to $quinacridone-magenta)
+  "todo": "#3D2B5B",         // deep purple (blends with $russian-violet)
+  "read later": "#5D3F64",   // muted violet
+  "important": "#913F59",    // quinacridone-magenta
+  "work": "#271B43",         // russian violet (deep base)
+  "personal": "#DB5AAA"      // sky magenta (accent)
 };
 
 function populateFilterDropdown() {
@@ -40,7 +39,7 @@ function renderNotes(notes) {
     card.style.backgroundColor = tagColors[note.tags[0]] || "#f9f9f9";
 
     const shortenedUrl = note.url.length > 50 ? note.url.slice(0, 50) + "..." : note.url;
-    const title = `<strong>${note.title}</strong> <br/> <a href="${note.url}" title="${note.url}" target="_blank"></a>`;
+    const title = `<strong>${note.title}</strong> <br/> <a href="${note.url}" title="${note.url}" target="_blank"> ${shortenedUrl} </a>`;
     const content = `<p contenteditable="true" class="note-content">${note.text}</p>`;
     const tags = note.tags.length ? `<small>Tags: ${note.tags.join(", ")}</small>` : "";
     const date = `<small> ${new Date(note.created_at).toLocaleString()}</small>`;
